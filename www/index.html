@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link rel="manifest" href="manifest.json">
+
+    <!-- un-comment this code to enable service worker
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(() => console.log('service worker installed'))
+          .catch(err => console.log('Error', err));
+      }
+    </script>-->
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+  </head>
+   <body ng-app="app" ng-controller="action">
+
+    <ion-pane>
+      <ion-header-bar class="bar-stable">
+        <h1 class="title">Calculator</h1>
+      </ion-header-bar>
+      
+
+
+
+      <ion-content scroll="false">
+      
+      <input id="displayScreenTop" type="text" value="{{displayScreenTop}}" style="font-size: 25pt;" disabled>
+      <input id="displayScreen" type="text" value="{{displayScreenBottom}}" style="font-size: 25pt;" disabled>
+  
+      <div class="row" style="padding: 0px 0px 0px 0px;">
+       <div class="col" ><button ng-click="C()">C</button></div>
+       <div class="col" ><button ng-click="CE()">CE</button></div>
+       <div class="col" ><button ng-click="neg()">±</button></div>
+       <div class="col"><button ng-click="divide()">÷</button></div>
+      </div>
+
+      <div class="row" style="padding: 0px 0px 0px 0px;">
+        <div class="col"><button ng-click="_7()">7</button></div>
+        <div class="col"><button ng-click="_8()">8</button></div>
+        <div class="col"><button ng-click="_9()">9</button></div>
+        <div class="col"><button ng-click="multiply()">×</button></div>      
+      </div>
+
+      <div class="row" style="padding: 0px 0px 0px 0px;">
+        <div class="col"><button ng-click="_4()">4</button></div>
+        <div class="col"><button ng-click="_5()">5</button></div>
+        <div class="col"><button ng-click="_6()" >6</button></div>
+        <div class="col"><button ng-click="add()">+</button></div>
+      </div>
+
+      <div class="row" style="padding: 0px 0px 0px 0px;">
+      	<div class="col"><button   ng-click="_1()">1</button></div>
+        <div class="col"><button  ng-click="_2()">2</button></div>
+        <div class="col"><button  ng-click="_3()">3</button></div>
+        <div class="col"><button  ng-click="sub()">-</button></div>  
+      </div>
+
+      <div class="row" style="padding: 0px 0px 0px 0px;">
+      	<div class="col"><button ng-click="_0()">0</button></div>
+        <div class="col"><button ng-click="dot()">.</button></div>
+        <div class="col col-50"><button ng-click="equal()">=</div><br>
+      </div>
+
+
+      </ion-content>
+    </ion-pane>
+  </body>
+</html>
